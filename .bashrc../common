@@ -59,8 +59,9 @@ function ftf {
     find $path -type f | grep -v '\/\.git\/'
 }
 alias ftfx='find . -type f | grep -v "\/\.git\/" | xargs'
-alias +w='chmod +w'
-alias +x='chmod +x'
+
+function +w { chmod +w $1; }
+function +x { chmod +x $1; }
 
 ##############
 # GIT Section
