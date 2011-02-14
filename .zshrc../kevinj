@@ -8,3 +8,7 @@ if [ -d $STCONFIG ]; then
     PATH=$PATH:$STCONFIG/stbin
     source $STCONFIG/.aliases-common
 fi
+
+if [ -x /opt/perl/5.12.2/bin/perl ]; then
+    export PATH=/opt/perl/5.12.2/bin:$PATH
+fi
