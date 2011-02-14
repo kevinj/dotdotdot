@@ -4,7 +4,7 @@ set -o vi
 STCONFIG=$HOME/src/st/stconfig
 if [ -d $STCONFIG ]; then
     eval `$STCONFIG/stbin/stdefaultenv`
-    SCREENUSERS=$ST_HAXORS
+    SCREENUSERS=`cat $STCONFIG/.st-haxors`
     PATH=$PATH:$STCONFIG/stbin
     source $STCONFIG/.aliases-common
 fi
