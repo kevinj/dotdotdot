@@ -1,2 +1,5 @@
 set -o vi
-[ -f $HOME/src/st/stconfig/.st-haxors ] && SCREENUSERS=`cat $HOME/src/st/stconfig/.st-haxors`
+if [ -d $HOME/src/st/stconfig ]; then
+    SCREENUSERS=`cat $HOME/src/st/stconfig/.st-haxors`
+    PATH=$PATH:$HOME/src/st/stconfig/stbin
+fi
