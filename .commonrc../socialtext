@@ -1,0 +1,12 @@
+# Socialtext stuff
+STCONFIG=$HOME/src/st/stconfig
+if [ -d $STCONFIG ]; then
+    eval `$STCONFIG/stbin/stdefaultenv`
+    SCREENUSERS=`cat $STCONFIG/.st-haxors`
+    PATH=$PATH:$STCONFIG/stbin
+    source $STCONFIG/.aliases-common
+fi
+
+if [ -x /opt/perl/5.12.2/bin/perl ]; then
+    export PATH=/opt/perl/5.12.2/bin:$PATH
+fi
