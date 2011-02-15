@@ -1,2 +1,39 @@
 set -o vi
 source $HOME/.commonrc../socialtext
+
+if [ -d $HOME/.keychain ]; then
+    if [ -f $HOME/.ssh/id_dsa ]; then
+        keychain $HOME/.ssh/id_dsa
+    elif [ -f $HOME/.ssh/id_rsa ]; then
+        keychain $HOME/.ssh/id_rsa
+    fi
+    source $HOME/.keychain/*-sh
+fi
+
+extra_paths=(
+    /usr/local/git/bin
+    /opt/local/bin
+    /opt/local/sbin
+    $HOME/Android/sdk/tools
+    $HOME/Flex/bin
+    /opt/vim/bin
+    /opt/git-1.7.0/bin
+    /Developer/usr/bin:
+)
+
+for dir in $extra_paths; do
+    if [ -d $dir ]; then
+        export PATH=$dir:$PATH
+    fi
+done
+
+if [ -f /sw/bin/init.sh ]; then
+    source /sw/bin/init.sh
+fi
+
+if [ -d $HOME/Android ]; then
+    export ANDROID_SWT=$HOME/Android/sdk/tools/lib/x86
+fi
+
+export ST_VE_NAME=dev10
+export TEST_LESS_VERBOSE=1
