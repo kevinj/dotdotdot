@@ -2,7 +2,7 @@
 STCONFIG=$HOME/src/st/stconfig
 if [ -d $STCONFIG ]; then
     eval `$STCONFIG/stbin/stdefaultenv`
-    SCREENUSERS=`perl -e 'print join ",", grep { chomp } <>' ~/src/st/stconfig/.st-haxors`
+    export SCREENUSERS=`perl -e 'print join ",", grep { chomp } <>' ~/src/st/stconfig/.st-haxors`
     PATH=$PATH:$STCONFIG/stbin
     source $STCONFIG/.aliases-common
 fi
