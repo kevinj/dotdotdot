@@ -25,7 +25,6 @@ set exrc
 " ============================================
 " lookupfile.vim
 " ============================================
-unmap <C-S>
 nmap <unique> <silent> <C-S> :LUBufs ^.*<CR>
 let g:LookupFile_AlwaysAcceptFirst=1
 let g:LookupFile_PreserveLastPattern=0
