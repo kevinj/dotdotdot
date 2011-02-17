@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "+ git pull --rebase $@" >&2
+git pull --rebase "$@"
+refresh-submodules
