@@ -31,8 +31,11 @@ syntax match stwikiLink           `\("[^"]*"\s*\)\?<\?\(https\?\|ftp\|mailto\|fi
 " text: "Link text" [Page Link]  -or-  [Page Link]
 syntax match stwikiLink           `\("[^"]*"\s*\)\?\(\[[^]]\+\]\)`
 
+" %%wikitestvar%%
+syntax match stwikiTestVar           /%%\([^%].\{-}\)%%/
+
 " text: {link: another workspace [Page Title] Section}
-syntax match stwikiLink           `\({[^}]\+}\)`
+syntax match stwikiLink           `\({[^}]\+}\)` contains=stwikiTestVar
 
 " text: *strong* 
 syntax match stwikiBold           /\(^\|\W\)\zs\*\([^\* ].\{-}\)\*/
@@ -49,7 +52,8 @@ syntax match stwikiCode           /`\([^`].\{-}\)`/
 syntax match stwikiDelText        /\(^\|\s\+\)\zs-\([^ <a ]\|[^ <img ]\|[^ -].*\)-/
 
 " Aggregate all the regular text highlighting into stwikiText
-syntax cluster stwikiText contains=stwikiItalic,stwikiBold,stwikiCode,stwikiDelText,stwikiLink,stwikiWord
+syntax cluster stwikiText contains=stwikiItalic,stwikiBold,stwikiCode,stwikiTestVar,stwikiDelText,stwikiLink,stwikiWord
+syntax cluster stwikiLink contains=stwikiTestVar
 
 " single-line WikiPropertys
 syntax match stwikiSingleLineProperty /^:\?[A-Z_][_a-zA-Z0-9]\+:/
@@ -105,6 +109,7 @@ hi def link stwikiList                  Type
 hi def link stwikiTable                 Type
 hi def link stwikiTableContinue         Error
 hi def link stwikiDelText               Comment
+hi def link stwikiTestVar               Statement
 
 hi def link stwikiSingleLineProperty    Identifier
 
