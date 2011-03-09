@@ -1,13 +1,21 @@
 set formatoptions-=t
 
-function! RunLastT()
+function! RunLastTest()
     if (expand('%:e') == 't')
-        let $lasttfile = expand('%')
+        let $lasttestfile = expand('%')
+        let $lasttestiswiki = 0
+    elseif (expand('%:e') == 'wiki')
+        let $lasttestfile = expand('%')
+        let $lasttestiswiki = 1
     endif
-    if (!strlen($lasttfile))
+    if (!strlen($lasttestfile))
        execute '!./' . expand('%')
     else
-        !prv -v $lasttfile
+        if ($lasttestiswiki)
+            !restart-apache-if-needed; TEST_LESS_VERBOSE=1 st-prove -v $lasttestfile
+        else
+            !TEST_LESS_VERBOSE=1 st-prove -v $lasttestfile
+        endif
     endif
 endf
 

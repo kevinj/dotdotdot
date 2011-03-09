@@ -112,6 +112,7 @@ hi def link stwikiDelText               Comment
 hi def link stwikiTestVar               Statement
 
 hi def link stwikiSingleLineProperty    Identifier
+set nowrap
 
 let b:current_syntax="stWiki"
 
