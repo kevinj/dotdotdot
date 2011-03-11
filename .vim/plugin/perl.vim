@@ -7,6 +7,9 @@ function! RunLastTest()
     elseif (expand('%:e') == 'wiki')
         let $lasttestfile = expand('%')
         let $lasttestiswiki = 1
+    elseif (matchend(expand('%'), '.t.js') == strlen(expand('%')))
+        let $lasttestfile = expand('%')
+        let $lasttestiswiki = 0
     endif
     if (!strlen($lasttestfile))
        execute '!./' . expand('%')
