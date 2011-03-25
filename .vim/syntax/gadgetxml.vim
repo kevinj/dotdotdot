@@ -18,7 +18,7 @@ unlet b:current_syntax
 
 syn case match
 syn include @html syntax/html.vim
-syn region htmlContent start=/<Content type="html">\s*\n\?\s*<!\[CDATA\[/ end=/]]>\s*\n\?\s*<\/Content>/ contains=@html
+syn region htmlContent start=/<Content type="\(?:html\|inline\)"[^>]*>\s*\n\?\s*<!\[CDATA\[/ end=/]]>\s*\n\?\s*<\/Content>/ contains=@html
 
 if main_syntax == 'gadgetxml'
   unlet main_syntax
