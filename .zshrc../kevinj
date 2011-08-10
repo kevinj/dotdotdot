@@ -18,7 +18,8 @@ extra_paths=(
     $HOME/Flex/bin
     /opt/vim/bin
     /opt/git-1.7.0/bin
-    /Developer/usr/bin:
+    /Developer/usr/bin
+    /var/lib/gems/1.8/bin
 )
 
 for dir in $extra_paths; do
