@@ -150,7 +150,7 @@ nnoremap <buffer> <unique> <Plug>Commententry {o#<Space>
 " Move to the first untranslated msgstr string forward.
 if !hasmapto('<Plug>NextTransFwd')
 	imap <buffer> <unique> <LocalLeader>m <Plug>NextTransFwd
-	nmap <buffer> <unique> <LocalLeader>m <Plug>NextTransFwd
+"	nmap <buffer> <unique> <LocalLeader>m <Plug>NextTransFwd
 endif
 inoremap <buffer> <unique> <Plug>NextTransFwd <ESC>/^msgstr\(\[\d\]\)\=\s*""\(\n\n\\|\%$\)<CR>:let @/=""<CR>:call histdel("/", -1)<CR>z.f"a
 nnoremap <buffer> <unique> <Plug>NextTransFwd /^msgstr\(\[\d\]\)\=\s*""\(\n\n\\|\%$\)<CR>:let @/=""<CR>:call histdel("/", -1)<CR><C-L>z.f"

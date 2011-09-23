@@ -12,13 +12,20 @@
 
 autocmd BufRead *.wiki set ft=wiki tw=0
 au FileType vim set iskeyword+=. iskeyword+=/ iskeyword+=~
+au BufNewFile,BufRead COMMIT_EDITMSG goto 1
+au BufNewFile,BufReadPost *.coffee,*.sass setl foldmethod=indent nofoldenable
+au BufNewFile,BufReadPost *.coffee,*.sass setl shiftwidth=2 expandtab
 set splitright
+
+" don't use temp files; just pipe stuff to shell commands
+if has('filterpipe')
+    set noshelltemp
+endif
 
 set termencoding=utf-8
 set encoding=utf-8
 set fileencoding=utf-8
 set pastetoggle=<F13>
-set vb t_vb=
 
 set exrc
 
@@ -59,5 +66,10 @@ let g:surround_71 = "loc(\"\r\")" " 71 = G
 nmap g' cs'g
 nmap g" cs"G
 
-" recognize .psgi files as perl
-au BufNewFile,BufRead *.psgi set filetype=perl
+" ============================================
+" allow for personal Vim customization
+" ============================================
+let vimrc_after = findfile('.vimrc-after', ',;', 1)
+if strlen(vimrc_after)
+    exe 'source ' . vimrc_after
+endif

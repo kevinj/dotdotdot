@@ -9,7 +9,6 @@ augroup filetypedetect
 
     au! BufNewFile,BufRead *.t                  setf perltest
     au! BufNewFile,BufRead *.hwd                setf hwd
-    au! BufNewFile,BufRead *.st                 setf wiki
     au! BufNewFile,BufRead *.wiki               setf wiki
     au! BufNewFile,BufRead *.psgi               setf perl
 
