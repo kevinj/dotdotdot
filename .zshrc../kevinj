@@ -22,7 +22,6 @@ extra_paths=(
     /var/lib/gems/1.8/bin
     /usr/local/ActivePerl-5.14/bin
     /Users/kevinj/Library/ActivePerl-5.14/bin
->>>>>>> add ActivePerl paths
 )
 
 for dir in $extra_paths; do
