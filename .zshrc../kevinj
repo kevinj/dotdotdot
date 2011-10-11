@@ -20,6 +20,9 @@ extra_paths=(
     /opt/git-1.7.0/bin
     /Developer/usr/bin
     /var/lib/gems/1.8/bin
+    /usr/local/ActivePerl-5.14/bin
+    /Users/kevinj/Library/ActivePerl-5.14/bin
+>>>>>>> add ActivePerl paths
 )
 
 for dir in $extra_paths; do
@@ -27,6 +30,8 @@ for dir in $extra_paths; do
         export PATH=$dir:$PATH
     fi
 done
+
+export MANPATH=/usr/local/ActivePerl-5.14/man:$MANPATH
 
 if [ -f /sw/bin/init.sh ]; then
     source /sw/bin/init.sh
