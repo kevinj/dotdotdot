@@ -40,5 +40,5 @@ if [ -d $HOME/Android ]; then
     export ANDROID_SWT=$HOME/Android/sdk/tools/lib/x86
 fi
 
-export ST_VE_NAME=dev10
+export ST_VE_NAME=dev8
 export TEST_LESS_VERBOSE=1
