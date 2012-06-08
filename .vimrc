@@ -15,6 +15,7 @@ au FileType vim set iskeyword+=. iskeyword+=/ iskeyword+=~
 au BufNewFile,BufRead COMMIT_EDITMSG goto 1
 au BufNewFile,BufReadPost *.coffee,*.sass setl foldmethod=indent nofoldenable
 au BufNewFile,BufReadPost *.coffee,*.sass setl shiftwidth=2 expandtab
+au BufNewFile,BufRead *.less set filetype=less
 set splitright
 
 " don't use temp files; just pipe stuff to shell commands
