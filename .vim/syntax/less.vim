@@ -22,8 +22,6 @@ endif
 
 syn case ignore
 
-
-
 syn keyword cssTagName abbr acronym address applet area a b base
 syn keyword cssTagName basefont bdo big blockquote body br button
 syn keyword cssTagName caption center cite code col colgroup dd del
@@ -299,6 +297,8 @@ let b:current_syntax = "less"
 if main_syntax == 'less'
   unlet main_syntax
 endif
+
+set et sts=2 sw=2
 
 
 " vim: ts=8

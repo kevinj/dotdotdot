@@ -392,4 +392,6 @@ endif
 let &cpo = s:mxml_cpo_save
 unlet s:mxml_cpo_save
 
+set et sts=2 sw=2
+
 " vim: ts=8
