@@ -13,6 +13,7 @@ augroup filetypedetect
     au! BufNewFile,BufRead *.psgi               setf perl
     au! BufNewFile,BufRead *.ling               setf ling
     au! BufNewFile,BufRead *.ling.txt           setf ling
+    au! BufNewFile,BufRead *.json               setf json
 
     au! BufNewFile,BufRead *.xml
         \ if ( getline(1) . getline(2) . getline(3) =~ '<Module>' ) |
