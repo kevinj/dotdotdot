@@ -1,0 +1,13 @@
+[alias]
+	br = branch
+	ci = commit
+	co = checkout
+	st = status
+        di = diff
+[push]
+	default = current
+[user]
+	name = Kevin Jones
+	email = kvn.jns@gmail.com
+[color]
+	ui = true
