@@ -16,6 +16,8 @@ extra_paths=(
     /opt/local/sbin
     $HOME/android-sdks/platform-tools
     $HOME/android-sdks/tools
+    $HOME/Library/Developer/Xamarin/android-sdk-mac_x86/tools
+    $HOME/Library/Developer/Xamarin/android-sdk-mac_x86/platform-tools
     $HOME/Flex/bin
     /opt/vim/bin
     /opt/git-1.7.0/bin
