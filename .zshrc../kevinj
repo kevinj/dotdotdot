@@ -10,6 +10,10 @@ if [ -d $HOME/.keychain ]; then
     source $HOME/.keychain/*-sh
 fi
 
+if [ -d $HOME/Projects/Recollect/Web ]; then
+    export RECOLLECT_BASE_PATH=$HOME/Projects/Recollect/Web
+fi
+
 extra_paths=(
     /usr/local/opt/ruby/bin
     /usr/local/git/bin
