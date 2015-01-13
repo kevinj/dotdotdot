@@ -19,9 +19,7 @@ extra_paths=(
     /usr/local/git/bin
     /opt/local/bin
     /opt/local/sbin
-    $HOME/android-sdks/platform-tools
-    $HOME/android-sdks/tools
-    $HOME/Library/Developer/Xamarin/android-sdk-mac_x86/tools
+    $HOME/Library/Developer/Xamarin/android-sdk-mac_x86/build-tools/20.0.0
     $HOME/Library/Developer/Xamarin/android-sdk-mac_x86/platform-tools
     $HOME/Flex/bin
     /opt/vim/bin
@@ -34,7 +32,6 @@ extra_paths=(
     /usr/local/share/npm/bin
     /Applications/Postgres93.app/Contents/MacOS/bin
     /Applications/Xcode.app/Contents/Developer/usr/bin
-    $HOME/.plenv/bin
 )
 
 for dir in $extra_paths; do
@@ -57,3 +54,8 @@ export ST_VE_NAME=dev10
 export TEST_LESS_VERBOSE=1
 
 alias git="nocorrect git"
+
+alias chloe='ssh brew.recollect.net -t src/recollect/docker-dev -u chloe'
+alias kevin='ssh brew.recollect.net -t src/recollect/docker-dev -u kevinj'
+alias jim='ssh brew.recollect.net -t src/recollect/docker-dev -u jsmiley'
+alias luke='ssh brew.recollect.net -t src/recollect/docker-dev -u lukec'
