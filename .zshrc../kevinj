@@ -55,7 +55,7 @@ export TEST_LESS_VERBOSE=1
 
 alias git="nocorrect git"
 
-alias chloe='ssh brew.recollect.net -t src/recollect/docker-dev -u chloe'
-alias kevin='ssh brew.recollect.net -t src/recollect/docker-dev -u kevinj'
-alias jim='ssh brew.recollect.net -t src/recollect/docker-dev -u jsmiley'
-alias luke='ssh brew.recollect.net -t src/recollect/docker-dev -u lukec'
+alias chloe='ssh brew.recollect.net -t /opt/recollect/bin/docker-dev -u chloe'
+alias kevin='ssh brew.recollect.net -t /opt/recollect/bin/docker-dev -u kevinj'
+alias jim='ssh brew.recollect.net -t /opt/recollect/bin/docker-dev -u jsmiley'
+alias luke='ssh brew.recollect.net -t /opt/recollect/bin/docker-dev -u lukec'
