@@ -59,3 +59,23 @@ alias chloe='ssh brew.recollect.net -t /opt/recollect/bin/docker-dev -u chloe'
 alias kevin='ssh brew.recollect.net -t /opt/recollect/bin/docker-dev -u kevinj'
 alias jim='ssh brew.recollect.net -t /opt/recollect/bin/docker-dev -u jsmiley'
 alias luke='ssh brew.recollect.net -t /opt/recollect/bin/docker-dev -u lukec'
+alias staging='ssh ipa.recollect.net -t screen -x'
+alias pale='ssh pale.recollect.net -t screen -x'
+
+color-ssh() {
+    if [[ -n "$ITERM_SESSION_ID" ]]; then
+        trap "tab-reset" INT EXIT
+        if [[ "$*" =~ "pale|prod|www" ]]; then
+            tab-color 255 0 0
+            theme-iterm ffffff 330000 0
+        elif [[ "$*" =~ "staging|ipa" ]]; then
+            tab-color 255 140 0
+            theme-iterm ffffff 003322 0
+        else
+            tab-color 0 255 0
+        fi
+    fi
+    ssh $*
+}
+compdef _ssh color-ssh=ssh
+alias ssh=color-ssh
