@@ -71,8 +71,10 @@ color-ssh() {
         elif [[ "$*" =~ "staging|ipa" ]]; then
             tab-color 255 140 0
             theme-iterm ffffff 003322 0
-        else
+        elif [[ "$*" =~ "brew" && "$*" =~ "kevin" ]]; then
             tab-color 0 255 0
+        elif [[ "$*" =~ "brew" ]]; then
+            tab-color 0 0 255
         fi
     fi
     ssh $*
