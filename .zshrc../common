@@ -6,6 +6,10 @@ bindkey "^N" down-line-or-history
 bindkey "^K" vi-change-eol
 bindkey "^R" history-incremental-search-backward
 
+export HISTSIZE=1000
+export SAVEHIST=1000
+export HISTFILE=$HOME/.zsh_history
+
 # Add the local compfuncs directory for other completion libraries like _git
 fpath=( $HOME/.zsh/compfuncs $fpath )
 
@@ -24,6 +28,21 @@ zmodload zsh/complist
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' squeeze-slashes true
+
++zstyle ':completion:*' special-dirs true
+ 
+alias find='noglob find'
+
+setopt auto_pushd
+DIRSTACKSIZE=9
+DIRSTACKFILE=~/src/recollect/.zdirs
+if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
+    dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
+    [[ -d $dirstack[1] ]] && cd $dirstack[1] && cd $OLDPWD
+fi
+chpwd() {
+    print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
+}
 
 alias find='noglob find'
 
@@ -61,3 +80,4 @@ tell application "iTerm"
 end tell
 EOF
 }
+

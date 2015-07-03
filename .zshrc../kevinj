@@ -70,14 +70,17 @@ color-ssh() {
             theme-iterm ffffff 330000 0
         elif [[ "$*" =~ "staging|ipa" ]]; then
             tab-color 255 140 0
-            theme-iterm ffffff 003322 0
+            theme-iterm ffffff 533505 0
         elif [[ "$*" =~ "brew" && "$*" =~ "kevin" ]]; then
             tab-color 0 255 0
         elif [[ "$*" =~ "brew" ]]; then
             tab-color 0 0 255
+            theme-iterm ffffff 101b4a 0
         fi
     fi
     ssh $*
 }
 compdef _ssh color-ssh=ssh
 alias ssh=color-ssh
+
+
