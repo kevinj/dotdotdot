@@ -29,7 +29,7 @@ zstyle ':completion:*' list-colors ''
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' squeeze-slashes true
 
-+zstyle ':completion:*' special-dirs true
+zstyle ':completion:*' special-dirs true
  
 alias find='noglob find'
 
